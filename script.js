@@ -1,9 +1,9 @@
-// Dark mode
+// Dark Mode
 function toggleMode(){
     document.body.classList.toggle("light");
 }
 
-// Typing
+// Typing Effect
 new Typed("#typing", {
     strings: ["Web Developer", "Programmer", "Tech Enthusiast"],
     typeSpeed:50,
@@ -11,7 +11,7 @@ new Typed("#typing", {
     loop:true
 });
 
-// Scroll animation
+// Scroll Animation
 const elements = document.querySelectorAll(".hidden");
 
 window.addEventListener("scroll", () => {
@@ -19,22 +19,5 @@ window.addEventListener("scroll", () => {
         if(el.getBoundingClientRect().top < window.innerHeight - 100){
             el.classList.add("show");
         }
-    });
-});
-
-// EmailJS setup
-(function(){
-    emailjs.init("YOUR_PUBLIC_KEY"); // ✏️
-})();
-
-document.getElementById("contact-form")
-.addEventListener("submit", function(e){
-    e.preventDefault();
-
-    emailjs.sendForm("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",this)
-    .then(() => {
-        alert("Message Sent ✅");
-    }, (error) => {
-        alert("Error ❌");
     });
 });
